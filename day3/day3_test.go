@@ -36,3 +36,19 @@ func TestNumValid(t *testing.T) {
 		}
 	}
 }
+
+var numValidVerticalCases = []struct {
+	input string
+	want  int
+}{
+	{"101 301 501\n102 302 502\n103 303 503\n201 401 601\n202 402 602\n203 403 603", 6},
+}
+
+func TestNumValidVertical(t *testing.T) {
+	for i, c := range numValidVerticalCases {
+		got, _ := NumberOfValidVertical(c.input)
+		if got != c.want {
+			t.Fatalf("Case %d: Wanted %v, got %v\n", i+1, c.want, got)
+		}
+	}
+}

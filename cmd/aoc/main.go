@@ -18,4 +18,5 @@ func main() {
 	fmt.Println("\n--- Day 3 ---")
 	numberValid, _ := day3.NumberOfValid(triangles)
 	fmt.Println("Number of valid triangles:", numberValid)
+	numberValidVertical, _ := day3.NumberOfValidVertical(triangles)
 }

@@ -31,3 +31,30 @@ func NumberOfValid(input string) (int, error) {
 	}
 	return numValid, nil
 }
+
+// NumberOfValidVertical caluculates the number of valid triangles found in the input string, grouping triangle sides vertically.
+func NumberOfValidVertical(input string) (int, error) {
+	numValid := 0
+	sides := strings.Fields(input)
+	i := 0
+	for {
+		if i >= len(sides) {
+			break
+		}
+		a, err := strconv.Atoi(sides[i])
+		b, err := strconv.Atoi(sides[i+3])
+		c, err := strconv.Atoi(sides[i+6])
+		if err != nil {
+			return -1, fmt.Errorf("Must be numerical: %v, %v, %v", a, b, c)
+		}
+		if isValid(a, b, c) {
+			numValid++
+		}
+		if i%3 == 2 {
+			i += 7
+		} else {
+			i++
+		}
+	}
+	return numValid, nil
+}
