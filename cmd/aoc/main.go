@@ -7,6 +7,8 @@ import (
 	"github.com/nllptr/aoc2016/day1"
 	"github.com/nllptr/aoc2016/day2"
 	"github.com/nllptr/aoc2016/day3"
+	"github.com/nllptr/aoc2016/day4"
+	"github.com/nllptr/aoc2016/day5"
 )
 
 func main() {
@@ -26,4 +28,13 @@ func main() {
 	fmt.Println("Number of valid triangles:", numberValid)
 	numberValidVertical, _ := day3.NumberOfValidVertical(triangles)
 	fmt.Println("Number of valid triangles (input read vertically):", numberValidVertical)
+
+	rooms := aoc2016.GetInput("input/day4.txt")
+	fmt.Println("\n--- Day 4 ---")
+	fmt.Println("Sum of SecotrIDs of valid rooms:", day4.SumSectorIDs(rooms))
+	fmt.Println("Sum of SecotrIDs of valid rooms:", day4.DecryptAndFindNorthPoleObjects(rooms))
+
+	doorID := aoc2016.GetInput("input/day5.txt")
+	fmt.Println("\n--- Day 5 ---")
+	fmt.Println("Door password:", day5.CrackPassword(doorID))
 }
