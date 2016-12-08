@@ -36,5 +36,8 @@ func main() {
 
 	doorID := aoc2016.GetInput("input/day5.txt")
 	fmt.Println("\n--- Day 5 ---")
-	fmt.Println("Door password:", day5.CrackPassword(doorID))
+	day5.CrackPassword(doorID)
+	fmt.Println(" Password 1 cracked!")
+	day5.CrackPassword2(doorID)
+	fmt.Println(" Password 2 cracked!")
 }
